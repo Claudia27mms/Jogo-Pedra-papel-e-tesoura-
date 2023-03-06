@@ -1,0 +1,50 @@
+from random import randint
+from time import sleep
+
+itens = ('Pedra', 'Papel', 'Tesoura')
+computador = randint(0, 2)
+print('''\033[1;33m As suas opções são: \033[m
+\033[1;35m[ 0 ] PEDRA 
+[ 1 ] PAPEL 
+[ 2 ] TESOURA \033[m''')
+você = int(input('\033[1;32m Qual é a sua jogada? \033[m'))
+
+print('\033[1;31m JO')
+sleep(1)
+print('\033[1;31m KEN')
+sleep(1)
+print('\033[1;31m PÔ!! \033[m')
+sleep(1)
+print('\033[1;35m-=' * 11)
+print('\033[1;31m Computador jogou {} \033[m'.format(itens[computador]))
+print('\033[1;34m Você jogou {} \033[m'.format(itens[você]))
+print('\033[1;35m-=' * 11)
+if computador == 0:  # Se o computador jogar pedra.
+    if você == 0:  # Você jogou pedra.
+        print('\033[1;33m DEU EMPATE! \033[m')
+    elif você == 1:  # Você jogou papel.
+        print('\033[1;34m VOCÊ VENCEU! \033[m')
+    elif você == 2:  # Você jogou tesoura.
+        print('\033[1;36m COMPUTADOR VENCEU! \033[m')
+    else:
+        print('\033[1;31m JOGADA INVÁLIDA! \033[m')
+
+elif computador == 1:  # Se o computador jogar papel.
+    if você == 0:  # Você jogou pedra.
+        print('\033[1;36m COMPUTADOR VENCEU! \033[m')
+    elif você == 1:  # Você jogou papel.
+        print('\033[1;33m DEU EMPATE! \033[m')
+    elif você == 2:  # Você jogou tesoura.
+        print('\033[1;34m VOCÊ VENCEU! \033[m')
+    else:
+        print('\033[1;31m JOGADA INVÁLIDA! \033[m')
+
+elif computador == 2:  # Se o computador jogar tesoura.
+    if você == 0:  # Você joga pedra.
+        print('\033[1;34m VOCÊ VENCEU! \033[m')
+    elif você == 1:  # Você joga papel.
+        print('\033[1;36m COMPUTADOR VENCEU! \033[m')
+    elif você == 2:  # Você joga tesoura.
+        print('\033[1;33m DEU EMPATE! \033[m')
+    else:
+        print('\033[1;31m JOGADA INVÁLIDA \033[m!')
